@@ -4,7 +4,6 @@ from sklearn.ensemble import RandomForestClassifier
 from data_pull import read_csv_file, pull_data
 from features import build_feature_set
 from preprocess import scale_for_quantum, chronological_split
-from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score
 from evaluate import evaluate
 import pandas as pd
 import numpy as np
@@ -67,5 +66,6 @@ if __name__ == "__main__":
 
     comparison = pd.DataFrame(rows)
     print(comparison)
+    comparison.to_csv("classical_results.csv")
 
     
